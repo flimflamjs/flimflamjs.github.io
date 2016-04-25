@@ -1,0 +1,40 @@
+{
+  "name": "flimflamjs.github.io",
+  "version": "0.0.1",
+  "description": "directory of flimflam components",
+  "main": "index.js",
+  "scripts": {
+    "dev": "budo index.es6:index.js -l -v -- -t babelify -d -e",
+    "build": "browserify -t babelify index.es6 | uglifyjs -cm > index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flimflamjs/flimflamjs.github.io.git"
+  },
+  "keywords": [
+    "flimflam"
+  ],
+  "author": "jay r bolton <jayrbolton@gmail.com> (http://jayrbolton.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flimflamjs/flimflamjs.github.io/issues"
+  },
+  "homepage": "https://github.com/flimflamjs/flimflamjs.github.io#readme",
+  "dependencies": {
+    "babelify": "6.4.0",
+    "flimflam-render": "0.0.4",
+    "flyd": "^0.2.2",
+    "flyd-ajax": "0.0.1",
+    "markdown-it": "6.0.1",
+    "ramda": "^0.21.0",
+    "snabbdom": "^0.4.2"
+  },
+  "devDependencies": {
+    "babelify": "6.4.0",
+    "browserify": "^13.0.0",
+    "budo": "^8.2.1",
+    "gulp": "^3.9.1",
+    "stylus": "^0.54.2",
+    "watchify": "^3.7.0"
+  }
+}
