@@ -1,3 +1,5 @@
+# Flimflam
+
 A standardized and curated directory of high quality front-end javascript UI components that are:
 - modular
 - functional

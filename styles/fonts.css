@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+body {
+  font-family: 'Noto Serif';
+  font-size: 1rem;
+  font-weight: 400;
+  color: #111;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  text-transform: uppercase;
+}
+p { 
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+p,
+ul,
+ol { 
+  line-height: 1.6rem;
+  vertical-align: baseline; 
+}
+ul,
+ol {
+  margin-top: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 3px solid #B9E2EB;
+}
+a:hover {
+  background: #B9E2EB;
+}
+
