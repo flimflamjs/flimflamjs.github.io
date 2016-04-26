@@ -18,7 +18,7 @@ h5 {
 }
 p { 
   margin-top: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 p,
 ul,
@@ -28,29 +28,15 @@ ol {
 }
 ul,
 ol {
-  margin-top: 1rem;
-  margin-bottom: 1.2rem;
+  margin-top: 0.9rem;
+  margin-bottom: 1.4rem;
 }
 a {
   color: #111;
-  z-index: 1;
   text-decoration: none;
-  position: relative;
-}
-a:before {
-  position: absolute;
-  content: '';
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  background: rgba(92, 181, 201, 0.4);
-  height: 3px;
-  z-index: -1;
-}
-a:hover:before {
-  background: rgba(0, 0, 0, 0);
+  border-bottom: 3px solid #B9E2EB;
 }
 a:hover {
-  background: rgba(92, 181, 201, 0.4);
+  background: #B9E2EB;
 }
 

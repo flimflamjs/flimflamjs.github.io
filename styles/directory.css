@@ -1,7 +1,9 @@
 .directory td {
-  padding: 12px 10px;
   font-family: 'Noto Sans';
   font-size: 0.9rem;
+}
+.directory td:nth-of-type(2) {
+  padding: 12px;
 }
 .package-name {
   font-weight: bold;
@@ -14,6 +16,7 @@
   background: #98B285;
   float: right;
 }
+.package-desc td,
 .directory code,
 .directory .package-label {
   font-size: 0.8rem;
@@ -23,6 +26,6 @@
 }
 .package-desc td {
   border-bottom: 1px solid #ddd;
-  padding-top: 10px;
+  padding: 0 0 10px 0;
 }
 
