@@ -1,4 +1,3 @@
-
 # Get Started
 
 **flimflam** isn't a single framework, but simply a recommended pattern for creating UI modules. The best way to get started is with these tutorials and examples: 
