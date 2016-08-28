@@ -1,25 +1,72 @@
 # Flimflam
 
-A standardized and curated directory of high quality front-end javascript UI components that are:
-- modular
-- functional
-- tested
+Flimflam is a pattern for creating UI components on the web. It is functional, with similarities to React/Redux or Elm, but has its own very distinct differences. Its advantages include:
 
-**flimflam is**:
-- a set of standard modules and practices for front-end development in javascript
-- a directory of high quality UI components
 
-**flimflam is not**:
-- a framework
-- a package manager
+- Not a framework: flimflam is simply a standard for combining some core, base libraries.
+- Part of the JS ecosystem; use modules from npm.
+- Components are easily testable.
+- Provides curated directory of npm modules that are tested, documented, and work well with flimflam (and the browser in general).
+- Truly modular and composable components, with never any need for globals or mutation. 
+- A very simple and flexible architecture with strong aesthetics but few constraints.
+- Fast virtual dom creation with Snabbdom.
+- A robust, ubiquitious functional library with Ramda.
+- Very strong handling of asynchronous behavior using Flyd.
+- Bullet points.
 
-Other features:
-- Fast virtual-dom using [snabbdom](https://github.com/paldepind/snabbdom)
-- Easier functional reactive programming using [flyd](https://github.com/paldepind/flyd)
-- Functional programming and immutable data using [ramda](http://ramdajs.com)
-- Simple modular component architecture using [the flimflam pattern]()
-- npm for package registry
-- browserify + commonjs + ES6
-- Bullet points
+# Temperature converter example
 
-[View the directory of modules!](#directory)
+The following is a quick example of a single component, which provides an interface for converting between Fahrenheit and Celsius. It uses ES6 syntax, which is optional:
+
+```js
+import flyd from 'flyd'
+import h from 'snabbdom/h'
+import snabbdom from 'snabbdom'
+import render from 'ff-core/render'
+
+// Initialize the state object
+const init = ()=> {
+  // Initialize input change event streams
+  // Think of streams as values that change over time.
+  // These two streams are input values that change over time, but start empty.
+  const changeCelsius$ = flyd.stream()
+  const changeFahren$ = flyd.stream()
+  // Compute temperature values based on input changes
+  const fahren$ = flyd.map(c => c * 9/5 + 32, state.changeCelsius$)
+  const celsius$ = flyd.map(f => f * 1.8 + 32, state.changeFahren$)
+  // The init function returns the state object for use in the view.
+  return {changeCelsius$, changeFahren$, fahren$, celsius$} 
+}
+
+// The view takes the state object, initialized with init(), and returns a Snabbdom tree
+const view = state => { 
+  return h('body', [
+    h('div', [
+      h('label', 'Fahrenheit')
+    , h('input', {
+          props: {value: state.fahren$()} // Call the stream to obtain its current value.
+        }, on: {
+          keyup: ev => state.changeFahren$(ev.currentTarget.value) // Use the stream as an event handler.
+        }
+      })
+    ])
+  , h('div', [
+      h('label', 'Celsius')
+    , h('input', {props: {value: state.celsius$()}, on: {keyup: ev => state.changeCelsius$(ev.currentTarget.value)}})
+    ])
+  ])
+}
+
+// Render the above component to the page
+// First, we initialize the Snabbdom patch function using the snabbdom modules we need.
+const patch = snabbdom.init([require('snabbdom/modules/eventlisteners'), require('snabbdom/modules/props')])
+// Then, we call the ff-core/render function to render the component to the dom. 
+// We only need to call this render function once on pageload for the top level component.
+render({container: document.body, state: init(), patch, view})
+```
+
+# Now what?
+
+- [Getting started tutorial](#start)
+- [View the directory of modules](#directory)
+- [More tutorials and examples](#tutorials)
