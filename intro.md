@@ -1,4 +1,4 @@
-# Flimflam
+# FlimFlam
 
 Flimflam is a pattern for creating UI components on the web. It is functional, with similarities to React/Redux or Elm, but has its own very distinct differences. Its advantages include:
 
@@ -6,15 +6,15 @@ Flimflam is a pattern for creating UI components on the web. It is functional, w
 - Not a framework: flimflam is simply a standard for combining some core, base libraries.
 - Part of the JS ecosystem; use modules from npm.
 - Components are easily testable.
-- Provides curated directory of npm modules that are tested, documented, and work well with flimflam (and the browser in general).
+- Provides a curated directory of npm modules that are tested, documented, and work well with flimflam (and the browser in general).
 - Truly modular and composable components, with never any need for globals or mutation. 
 - A very simple and flexible architecture with strong aesthetics but few constraints.
 - Fast virtual dom creation with Snabbdom.
-- A robust, ubiquitious functional library with Ramda.
+- A robust, standard functional library with Ramda.
 - Very strong handling of asynchronous behavior using Flyd.
 - Bullet points.
 
-# Temperature converter example
+# Example
 
 The following is a quick example of a single component, which provides an interface for converting between Fahrenheit and Celsius. It uses ES6 syntax, which is optional:
 
