@@ -44,24 +44,30 @@ const view = state => {
     h('div', [
       h('label', 'Fahrenheit')
     , h('input', {
-          props: {value: state.fahren$()} // Call the stream to obtain its current value.
-        }, on: {
-          keyup: ev => state.changeFahren$(ev.currentTarget.value) // Use the stream as an event handler.
-        }
+        // Call the stream to obtain its current value.
+        props: {value: state.fahren$()} 
+        // Use the stream as an event handler.
+      , on: {keyup: ev => state.changeFahren$(ev.currentTarget.value)}
       })
     ])
   , h('div', [
       h('label', 'Celsius')
-    , h('input', {props: {value: state.celsius$()}, on: {keyup: ev => state.changeCelsius$(ev.currentTarget.value)}})
+    , h('input', {
+        props: {value: state.celsius$()}
+      , on: {keyup: ev => state.changeCelsius$(ev.currentTarget.value)}
+      })
     ])
   ])
 }
 
 // Render the above component to the page
-// First, we initialize the Snabbdom patch function using the snabbdom modules we need.
+// Init the Snabbdom patch function.
+// You can pick snabbdom modules here.
 const patch = snabbdom.init([require('snabbdom/modules/eventlisteners'), require('snabbdom/modules/props')])
-// Then, we call the ff-core/render function to render the component to the dom. 
-// We only need to call this render function once on pageload for the top level component.
+// Call the ff-core/render function to render the component to the dom. 
+// We only need to call this render function once
+// for the top level component.
+// The dom will automatically patch when streams change.
 render({container: document.body, state: init(), patch, view})
 ```
 
