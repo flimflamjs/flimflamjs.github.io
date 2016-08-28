@@ -38,7 +38,8 @@ const init = ()=> {
   return {changeCelsius$, changeFahren$, fahren$, celsius$} 
 }
 
-// The view takes the state object, initialized with init(), and returns a Snabbdom tree
+// The view takes the state object, initialized with init()
+// It returns a Snabbdom tree
 const view = state => { 
   return h('body', [
     h('div', [
