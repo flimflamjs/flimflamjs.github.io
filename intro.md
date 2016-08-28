@@ -63,7 +63,10 @@ const view = state => {
 // Render the above component to the page
 // Init the Snabbdom patch function.
 // You can pick snabbdom modules here.
-const patch = snabbdom.init([require('snabbdom/modules/eventlisteners'), require('snabbdom/modules/props')])
+const patch = snabbdom.init([
+  require('snabbdom/modules/eventlisteners')
+, require('snabbdom/modules/props')
+])
 // Call the ff-core/render function to render the component to the dom. 
 // We only need to call this render function once
 // for the top level component.
