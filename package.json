@@ -23,18 +23,19 @@
   "dependencies": {
     "babelify": "6.4.0",
     "flimflam-render": "0.0.5",
-    "flyd": "^0.2.2",
+    "flyd": "0.2.2",
     "flyd-ajax": "0.0.1",
-    "markdown-it": "6.0.1",
-    "ramda": "^0.21.0",
-    "snabbdom": "^0.4.2"
+    "highlight.js": "9.6.0",
+    "marked": "0.3.6",
+    "ramda": "0.21.0",
+    "snabbdom": "0.4.2"
   },
   "devDependencies": {
     "babelify": "6.4.0",
-    "browserify": "^13.0.0",
-    "budo": "^8.2.1",
-    "gulp": "^3.9.1",
-    "stylus": "^0.54.2",
-    "watchify": "^3.7.0"
+    "browserify": "13.0.0",
+    "budo": "8.2.1",
+    "gulp": "3.9.1",
+    "stylus": "0.54.2",
+    "watchify": "3.7.0"
   }
 }
