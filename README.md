@@ -1,69 +1,12 @@
 # flimflamjs.github.io
-directory of flimflam components
 
-flimflam is a **curated** directory of frontend web modules that follow a certain set of standards.
+This is the main website for FLIMFLAM. It uses flimflam itself for the CMS and pulls material from markdown files off github, from this repo and also from the [flimflam-docs](https://github.com/flimflamjs/flimflam-docs) repo.
 
-flimflam is a collection of UI modules that:
-- follow a set of standards and use a design pattern
-- have complete tests
-- have one discrete purpose
-- are curated
-- are not styled
+## Dev
 
-flimflam is not:
-- a framework
-- a package manager
+To run the dev server: `npm run dev`
 
-flimflam module requirements:
-- render HTML using **snabbdom**
-- handle asynchronous data using **flyd** and its modules
-- practice functional programming and immutability with **Ramda**
-- organize components according to the **flimflam architecture**, which combines the usage of the above three libraries
-- host components on **npm**
-- have complete test coverage across browsers
-- have complete documentation about the component
-- have a working demo of the component
+To build: `npm run build`
 
-# the flimflam architecture
-
-```
-view :: (events, state, config) -> vtree
-
-init :: (events, state) -> {defaultState, events, updates, children}
-
-defaultState is an object of data for the view set on page load.
-
-events are a collection of streams that handle DOM events.
-
-updates are a collection of pairs of streams and state updater functions
-
-children are any child components you want to use
-
-flyd.construct(component) -> state$
-flyd.map(view, state) -> vtree$
-flyd.scan(patch, domContainer, vtree$) -> dom$
-```
-
-# Todo
-
-**ui components**
-
-- Modal 
-- Wizard
-- Notification
-- Pagination/show more
-- Navigation
-- Typeahead/automplete
-- Date-picker/time-picker (wrap pikaday?)
-- Wysiwyg (wrap another thing)
-- Color picker
-- Orderable/draggable list/table
-- Form validator
-
-**flyd modules**
-- ajax
-- file input stream
-- FormData post stream
-- time delay
-
+Source code changes go in the `src` branch.
 
