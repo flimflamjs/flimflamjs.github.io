@@ -1,0 +1,31 @@
+.directory td {
+  font-family: 'Noto Sans';
+  font-size: 0.9rem;
+}
+.directory td:nth-of-type(2) {
+  padding: 12px;
+}
+.package-name {
+  font-weight: bold;
+}
+.package-label {
+  margin-left: 6px;
+  display: inline-block;
+  padding: 1px 4px;
+  color: #FFF;
+  background: #8EDB9F;
+  float: right;
+}
+.package-desc td,
+.directory code,
+.directory .package-label {
+  font-size: 0.8rem;
+}
+.package-desc {
+  color: grey;
+}
+.package-desc td {
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 10px 0;
+}
+
