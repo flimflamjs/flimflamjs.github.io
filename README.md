@@ -18,5 +18,6 @@ The build script (`./build.sh`) will put everything in a `dist/` directory. To d
 - `cd dist`
 - `git init`
 - `git remote add gh-deploy https://github.com/flimflamjs/flimflamjs.github.io.git`
+- `git add --all; git commit -m 'Build'`
 - `git push -f gh-deploy master`
 
