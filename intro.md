@@ -21,25 +21,26 @@ The following is a quick example of a single component, which provides an interf
 ```js
 import flyd from 'flyd'
 import h from 'snabbdom/h'
+import R from 'ramda'
 import snabbdom from 'snabbdom'
 import render from 'ff-core/render'
 
-// initialize the state object
+// Initialize the state object
 const init = ()=> {
   // initialize input change event streams
   // think of streams as values that change over time.
   // these two streams are input values that change over time, but start empty.
-  const changecelsius$ = flyd.stream()
-  const changefahren$ = flyd.stream()
+  const changeCelsius$ = flyd.stream()
+  const changeFahren$ = flyd.stream()
   // compute temperature values based on input changes
-  const fahren$ = flyd.map(c => c * 9/5 + 32, state.changecelsius$)
-  const celsius$ = flyd.map(f => f * 1.8 + 32, state.changefahren$)
+  const fahren$ = flyd.map(c => c * 9/5 + 32, state.changeCelsius$)
+  const celsius$ = flyd.map(f => f * 1.8 + 32, state.changeFahren$)
   // the init function returns the state object for use in the view.
-  return {changecelsius$, changefahren$, fahren$, celsius$} 
+  return {changeCelsius$, changeFahren$, fahren$, celsius$} 
 }
 
-// the view takes the state object, initialized with init()
-// it returns a snabbdom tree
+// The view takes the state object, initialized with init().
+// It returns a snabbdom tree.
 const view = state => { 
   return h('body', [
     h('div', [
@@ -48,35 +49,35 @@ const view = state => {
         // call the stream to obtain its current value.
         props: {value: state.fahren$()} 
         // use the stream as an event handler.
-      , on: {keyup: ev => state.changefahren$(ev.currenttarget.value)}
+      , on: {keyup: ev => state.changeFahren$(ev.currentTarget.value)}
       })
     ])
   , h('div', [
       h('label', 'celsius')
     , h('input', {
         props: {value: state.celsius$()}
-      , on: {keyup: ev => state.changecelsius$(ev.currenttarget.value)}
+      , on: {keyup: ev => state.changeCelsius$(ev.currentTarget.value)}
       })
     ])
   ])
 }
 
-// render the above component to the page
+// Render the above component to the page
 // init the snabbdom patch function.
 // you can pick snabbdom modules here.
 const patch = snabbdom.init([
   require('snabbdom/modules/eventlisteners')
 , require('snabbdom/modules/props')
 ])
-// call the ff-core/render function to render the component to the dom. 
-// we only need to call this render function once
+// Call the ff-core/render function to render the component to the dom. 
+// We only need to call this render function once
 // for the top level component.
-// the dom will automatically patch when streams change.
+// The DOM will automatically patch when streams change.
 render({container: document.body, state: init(), patch, view})
 ```
 
-# now what?
+# Now what?
 
-- [getting started tutorial](#start)
-- [view the directory of modules](#directory)
-- [more tutorials and examples](#tutorials)
+- [Getting started tutorial](#start)
+- [View the directory of modules](#directory)
+- [More tutorials and examples](#tutorials)

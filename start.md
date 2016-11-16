@@ -12,7 +12,7 @@ To master flimflam, you must also master these libraries. Use their documentatio
 **flimflam** is a specification for combining the above three libraries into composable, reusable, modular UI components. What does this mean?
 - composable: you can nest UI components inside any other component
 - reusable: you can re-initialize UI components, each with its own state and streams
-- modular: every UI component is discrete and has a standard API of `{streams, updates, state, children}`
+- modular: every UI component is discrete, nestable, and has a standard API of `{init, view}`
 
 You can also view [the flimflam specification](https://github.com/flimflamjs/flimflam-docs/blob/master/specification.md).
 
