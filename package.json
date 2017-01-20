@@ -4,8 +4,10 @@
   "description": "directory of flimflam components",
   "main": "index.js",
   "scripts": {
-    "dev": "budo index.es6:index.js -l -v -- -t babelify -d -e",
-    "build": "./build.sh"
+    "dev": "budo index.js:build.js -l -v -- -t es2040 -d -e",
+    "build": "./build.sh",
+    "build-css": "postcss -c postcss-config.js -l",
+    "watch-css": "postcss -w -c postcss-config.js -l"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,8 @@
   },
   "homepage": "https://github.com/flimflamjs/flimflamjs.github.io#readme",
   "dependencies": {
-    "babelify": "6.4.0",
-    "flimflam-render": "0.0.5",
+    "ff-docs-theme": "https://github.com/flimflamjs/docs-theme.git",
+    "ff-core": "0.0.4",
     "flyd": "0.2.2",
     "flyd-ajax": "0.0.1",
     "highlight.js": "9.6.0",
@@ -31,11 +33,14 @@
     "snabbdom": "0.4.2"
   },
   "devDependencies": {
-    "babelify": "6.4.0",
+    "autoprefixer": "6.6.1",
     "browserify": "13.0.0",
+    "es2040": "1.2.4",
     "budo": "8.2.1",
-    "gulp": "3.9.1",
-    "stylus": "0.54.2",
+    "postcss": "5.2.10",
+    "postcss-cli": "2.6.0",
+    "postcss-import": "9.1.0",
+    "precss": "1.4.0",
     "watchify": "3.7.0"
   }
 }
