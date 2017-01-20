@@ -140,6 +140,9 @@ p.protip {
   text-decoration: none;
   color: #666;
 } 
+[data-nav-item='active'] {
+  font-weight: bold;
+} 
 .directory td {
   font-family: 'Noto Sans';
   font-size: 0.9rem;

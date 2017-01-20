@@ -3,11 +3,12 @@
 Flimflam is a pattern for creating UI components on the web. It embraces functional programming, virtual DOM, and streams.
 
 
-- Combines [snabbdom](https://github.com/snabbdom/snabbdom), [flyd](https://github.com/paldepind/flyd), and [ramda](http://ramdajs.com/docs) into a robust UI programming pattern.
+- Combines [snabbdom](https://github.com/snabbdom/snabbdom) and [flyd](https://github.com/paldepind/flyd) into a fun UI programming pattern.
 - Is part of the normal JS ecosystem; use modules from npm.
 - Allows for easy unit testing of components
 - Has a pre-existing collection of reusable, themable, composable UI components
-- Never any need for globals or mutation
+- Never requires you to define any globals or do any mutations
+- Uses plain JS: combine with other packages on npm
 
 # Quick Example
 

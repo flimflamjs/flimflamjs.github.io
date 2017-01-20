@@ -25,3 +25,7 @@
   color: #666;
 }
 
+[data-nav-item='active'] {
+  font-weight: bold;
+}
+
