@@ -5,11 +5,11 @@
 
 A demo of all the base UI components that are included in the `flimflam` package:
 
-http://flimflamjs.github.io/core-ui
+http://flimflamjs.github.io/core-ui-demo
 
 ## 7GUIs Benchmark
 
-A demo of all the base UI components that come from the `flimflam` package:
+7GUIs is a "usability" benchmark for frontend frameworks that includes 7 challenges. We implemented these in flimflam, and the demo is here:
 
 http://flimflamjs.github.io/7GUIs
 

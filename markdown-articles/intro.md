@@ -2,13 +2,11 @@
 
 Flimflam is a pattern for creating UI components on the web. It embraces functional programming, virtual DOM, and streams.
 
-
 - Combines [snabbdom](https://github.com/snabbdom/snabbdom) and [flyd](https://github.com/paldepind/flyd) into a fun UI programming pattern.
-- Is part of the normal JS ecosystem; use modules from npm.
+- Is plain JS and is part of the normal `npm` ecosystem
 - Allows for easy unit testing of components
 - Has a pre-existing collection of reusable, themable, composable UI components
 - Never requires you to define any globals or do any mutations
-- Uses plain JS: combine with other packages on npm
 
 # Quick Example
 
@@ -22,12 +20,11 @@ const h = require('flimflam/h')
 // State objects primarily contain flyd streams
 const init = () => {
 
-  // These two streams represent user input values
-  // They will contain event objects
+  // These two streams will contain user input events
   const keyupCelsius$ = flyd.stream()
   const keyupFahren$ = flyd.stream()
 
-  // Streams of input values from the event streams
+  // Cretate streams that contain the actual input values
   const celsiusValue$ = flyd.map(getValue, keyupCelsius$)
   const fahrenValue$ = flyd.map(getValue, keyupFahren$)
 
