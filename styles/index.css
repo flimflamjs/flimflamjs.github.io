@@ -1,5 +1,4 @@
-@import 'normalize.css';
-@import 'fonts.css';
+@import 'ff-docs-theme';
 @import 'sidebar.css';
 @import 'directory.css';
 @import 'syntax-theme.css';
@@ -7,23 +6,18 @@
 /* DOM structure: */ 
 /* container [ main [ sidebar, content] ] */
 
-body {
-  color: #111;
-  background: #fffff8;
+code {
+  background: transparent;
 }
-* {
-  box-sizing: border-box;
+
+pre {
+  background: #f8f8f8;
+  padding: 1em;
+  border: 1px solid $teal;
 }
+
 .content {
   padding-left: 230px;
   max-width: 900px;
-}
-.content h1 {
-  opacity: 0.5;
-}
-pre {
-  background: #e7f4f7;
-  padding: 16px;
-  margin: 0;
 }
 
